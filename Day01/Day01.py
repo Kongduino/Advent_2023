@@ -9,7 +9,7 @@ def calc(lines):
     if x == 1:
       num = int(s[0:1]) * 11
     elif x == 2:
-      num = int(s[0:1])*10+int(s[1])
+      num = int(s)
     else:
       num = int(s[0:1])*10+int(s[len(s)-1])
     sum += num
