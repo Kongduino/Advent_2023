@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import re
+patt = re.compile('\D+')
 
 def calc(lines):
+  global patt
   sum = 0
   for ln in lines:
     s = re.sub(patt, '', ln)
@@ -19,7 +21,6 @@ file = open('input.txt')
 input = file.read()
 file.close()
 
-patt = re.compile('\D+')
 lines = input.split("\n")
 sum = calc(lines)
 print(f"Part 1: {sum}")
