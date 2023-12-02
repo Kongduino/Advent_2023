@@ -11,7 +11,7 @@ def calc(lines):
     elif x == 2:
       num = int(s)
     else:
-      num = int(s[0:1])*10+int(s[len(s)-1])
+      num = int(s[0:1]+s[len(s)-1])
     sum += num
   return sum
 
