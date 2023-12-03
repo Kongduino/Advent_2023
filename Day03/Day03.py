@@ -2,7 +2,6 @@ import re
 
 pattNums = re.compile('\\d+')
 pattSymbol = re.compile('[^0-9.]')
-pattDigit = re.compile('[0-9]')
 pattDigits = re.compile('[0-9]+')
 checkLeft=re.compile('\d+$')
 checkRight=re.compile('^\d+')
@@ -66,7 +65,7 @@ def part1(lines):
   return sum
 
 def part2(lines):
-  global pattDigit, pattDigits, checkLeft, checkRight
+  global pattDigits, checkLeft, checkRight
   lnLen = len(lines[0])
   numLines = len(lines)
   sum = 0
@@ -127,7 +126,7 @@ def part2(lines):
                 #print(f"Found a number below/right of *: {nb}")
                 neighbors.append(nb)
         if len(neighbors) == 2:
-          #print(neighbors)
+          #xprint(neighbors)
           ratio = neighbors[0] * neighbors[1]
           sum += ratio
         neighbors=[]
