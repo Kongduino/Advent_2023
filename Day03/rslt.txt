@@ -1,0 +1,9 @@
+Part 1, Test.
+Sum: 4361
+Part 2, Test.
+Sum: 467835
+
+Part 1, Full.
+Sum: 531932
+Part 2, Full.
+Sum: 73646890

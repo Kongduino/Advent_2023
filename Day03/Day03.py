@@ -37,7 +37,6 @@ def part1(lines):
     while pos < lnLen:
       (acc, pos, nextPos) = findNextNumber(ln, pos)
       if acc != None:
-        accLen = len(acc)
         foundSymbol = False
         left = pos - 1
         if left > -1:
@@ -131,18 +130,14 @@ def part2(lines):
           sum += ratio
         neighbors=[]
   return sum
-  
-  
-  print(numbers)
-
 
 lines = input.splitlines()
 print("Part 1, Test.")
 sum = part1(lines)
-print(f"Sum: {sum}\n")
+print(f"Sum: {sum}")
 print(f"Part 2, Test.")
 sum = part2(lines)
-print(f"Sum: {sum}")
+print(f"Sum: {sum}\n")
 
 file = open('input.txt')
 input = file.read()
@@ -150,7 +145,7 @@ file.close()
 lines = input.splitlines()
 print("Part 1, Full.")
 sum = part1(lines)
-print(f"Sum: {sum}\n")
+print(f"Sum: {sum}")
 print(f"Part 2, Full.")
 sum = part2(lines)
 print(f"Sum: {sum}")
