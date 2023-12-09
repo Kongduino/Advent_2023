@@ -1,0 +1,20 @@
+From 11A L to 11B
+11B doesn't end in Z. Abort.
+From 22A L to 22B
+22B doesn't end in Z. Abort.
+From 11B R to 11Z
+From 22B R to 22C
+22C doesn't end in Z. Abort.
+From 11Z L to 11B
+11B doesn't end in Z. Abort.
+From 22C L to 22Z
+From 11B R to 11Z
+From 22Z R to 22B
+22B doesn't end in Z. Abort.
+From 11Z L to 11B
+11B doesn't end in Z. Abort.
+From 22B L to 22C
+22C doesn't end in Z. Abort.
+From 11B R to 11Z
+From 22C R to 22Z
+all Z! {steps}
