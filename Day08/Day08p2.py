@@ -1,5 +1,7 @@
-# instructions="LR"
-# 
+import math
+
+#instructions="LR"
+
 # maps = """11A = (11B, XXX)
 # 11B = (XXX, 11Z)
 # 11Z = (11B, XXX)
@@ -24,28 +26,30 @@ for ln in lines:
   maps[name] = [dirs[0], dirs[1]]
   if name[2] == 'A': lesA.append(name)
 
-dirIndex = 0
-steps = 1
-found = False
-while found == False:
-  where = instructions[dirIndex]
-  which = 0
-  if where == 'R': which = 1
-  allZ = True
-  #print("-----------------------")
-  for n in range(0, len(lesA)):
-    startingPoint = lesA[n]
-    gps = maps[startingPoint][which]
-    #print(f"From {startingPoint} {where} to {gps}")
-    lesA[n] = gps
-    if gps[2] != 'Z':
-      #print(f"  {gps} doesn't end in Z.")
-      allZ = False
-  if allZ == True:
-    print(f"all Z! {steps} steps.")
-    break
-  dirIndex += 1
-  if dirIndex == len(instructions):
-    dirIndex = 0
-  steps += 1
-  startingPoint = gps
+maxLen = len(maps)**2
+instLen = len(instructions)
+def getScore(startingPoint):
+  dirIndex = 0
+  steps = 0
+  while startingPoint[2] != "Z":
+    whereTo = instructions[dirIndex]
+    whatNext = 0
+    if whereTo == 'R': whatNext = 1
+    gps = maps[startingPoint][whatNext]
+    dirIndex += 1
+    if dirIndex == len(instructions):
+      dirIndex = 0
+    steps += 1
+    startingPoint = gps
+  return steps
+
+scores = []
+for n in range(0, len(lesA)):
+  L = getScore(lesA[n])
+  scores.append(L)
+commun = 1
+for score in scores:
+    commun = math.lcm(commun, score)
+print(commun)
+
+
